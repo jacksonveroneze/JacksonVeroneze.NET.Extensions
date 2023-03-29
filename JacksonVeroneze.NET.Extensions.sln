@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E36B94FA-A28E-436E-A63F-D6A53DE4A890}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JacksonVeroneze.NET.Extensions", "src\JacksonVeroneze.NET.Extensions\JacksonVeroneze.NET.Extensions.csproj", "{8BBE301D-1ECD-4581-99F8-8697B3749C07}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3E770730-CB0C-4E52-8143-7FA5D3822FEE}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		global.json = global.json
+		LICENSE = LICENSE
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{28F66F37-2591-4815-8588-8D1D3C988E9B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "github", "github", "{6A212F6D-5490-433B-84A4-049156C9B167}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\run-commit-linter.yml = .github\workflows\run-commit-linter.yml
+		.github\workflows\run-create-package.yml = .github\workflows\run-create-package.yml
+		.github\workflows\run-pr-assign.yml = .github\workflows\run-pr-assign.yml
+		.github\workflows\run-unit-tests.yml = .github\workflows\run-unit-tests.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JacksonVeroneze.NET.Extensions.UnitTests", "tests\JacksonVeroneze.NET.Extensions.UnitTests\JacksonVeroneze.NET.Extensions.UnitTests.csproj", "{6190BCB1-D59B-449E-8588-5E3F672870B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JacksonVeroneze.NET.Extensions.Util", "tests\JacksonVeroneze.NET.Extensions.Util\JacksonVeroneze.NET.Extensions.Util.csproj", "{1619D8D1-A36C-4C6F-A8F7-75BE83178B99}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BBE301D-1ECD-4581-99F8-8697B3749C07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BBE301D-1ECD-4581-99F8-8697B3749C07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BBE301D-1ECD-4581-99F8-8697B3749C07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BBE301D-1ECD-4581-99F8-8697B3749C07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6190BCB1-D59B-449E-8588-5E3F672870B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6190BCB1-D59B-449E-8588-5E3F672870B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6190BCB1-D59B-449E-8588-5E3F672870B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6190BCB1-D59B-449E-8588-5E3F672870B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1619D8D1-A36C-4C6F-A8F7-75BE83178B99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1619D8D1-A36C-4C6F-A8F7-75BE83178B99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1619D8D1-A36C-4C6F-A8F7-75BE83178B99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1619D8D1-A36C-4C6F-A8F7-75BE83178B99}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8BBE301D-1ECD-4581-99F8-8697B3749C07} = {E36B94FA-A28E-436E-A63F-D6A53DE4A890}
+		{6A212F6D-5490-433B-84A4-049156C9B167} = {3E770730-CB0C-4E52-8143-7FA5D3822FEE}
+		{6190BCB1-D59B-449E-8588-5E3F672870B1} = {28F66F37-2591-4815-8588-8D1D3C988E9B}
+		{1619D8D1-A36C-4C6F-A8F7-75BE83178B99} = {28F66F37-2591-4815-8588-8D1D3C988E9B}
+	EndGlobalSection
+EndGlobal
