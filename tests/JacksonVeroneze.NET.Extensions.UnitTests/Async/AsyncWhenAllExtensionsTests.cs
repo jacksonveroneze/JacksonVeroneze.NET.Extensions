@@ -7,12 +7,13 @@ public class AsyncWhenAllExtensionsTests
 {
     private readonly ITestOutputHelper _testOutputHelper;
 
-    public AsyncWhenAllExtensionsTests(ITestOutputHelper testOutputHelper)
+    public AsyncWhenAllExtensionsTests(
+        ITestOutputHelper testOutputHelper)
     {
         _testOutputHelper = testOutputHelper;
     }
-    
-        #region WhenAllSequentialAsync
+
+    #region WhenAllSequentialAsync
 
     [Fact(DisplayName = nameof(AsyncExtensions)
                         + nameof(AsyncExtensions.WhenAllSequentialAsync)

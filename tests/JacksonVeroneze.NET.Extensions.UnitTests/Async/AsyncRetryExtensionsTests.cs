@@ -6,7 +6,8 @@ public class AsyncRetryExtensionsTests
 {
     private readonly ITestOutputHelper _testOutputHelper;
 
-    public AsyncRetryExtensionsTests(ITestOutputHelper testOutputHelper)
+    public AsyncRetryExtensionsTests(
+        ITestOutputHelper testOutputHelper)
     {
         _testOutputHelper = testOutputHelper;
     }

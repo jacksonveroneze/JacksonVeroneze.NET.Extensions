@@ -7,11 +7,12 @@ public class AsyncTryExtensionsTests
 {
     private readonly ITestOutputHelper _testOutputHelper;
 
-    public AsyncTryExtensionsTests(ITestOutputHelper testOutputHelper)
+    public AsyncTryExtensionsTests(
+        ITestOutputHelper testOutputHelper)
     {
         _testOutputHelper = testOutputHelper;
     }
-    
+
     [Fact(DisplayName = nameof(AsyncExtensions)
                         + nameof(AsyncExtensions.TryAsync)
                         + " : TryAsync - Success")]

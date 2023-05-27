@@ -7,7 +7,8 @@ public class AsyncOnlyOneExtensionsTests
 {
     private readonly ITestOutputHelper _testOutputHelper;
 
-    public AsyncOnlyOneExtensionsTests(ITestOutputHelper testOutputHelper)
+    public AsyncOnlyOneExtensionsTests(
+        ITestOutputHelper testOutputHelper)
     {
         _testOutputHelper = testOutputHelper;
     }

@@ -7,7 +7,8 @@ public class AsyncFallbackExtensionsTests
 {
     private readonly ITestOutputHelper _testOutputHelper;
 
-    public AsyncFallbackExtensionsTests(ITestOutputHelper testOutputHelper)
+    public AsyncFallbackExtensionsTests(
+        ITestOutputHelper testOutputHelper)
     {
         _testOutputHelper = testOutputHelper;
     }
