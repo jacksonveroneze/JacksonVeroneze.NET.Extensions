@@ -24,7 +24,8 @@ public static partial class AsyncExtensions
     {
         Task timeoutTask = Task.Delay(timeout);
 
-        Task completedTask = await Task.WhenAny(task, timeoutTask)
+        Task completedTask = await Task
+            .WhenAny(task, timeoutTask)
             .ConfigureAwait(false);
 
         if (completedTask == timeoutTask)
@@ -40,7 +41,8 @@ public static partial class AsyncExtensions
     {
         Task timeoutTask = Task.Delay(timeout);
 
-        Task completedTask = await Task.WhenAny(task, timeoutTask)
+        Task completedTask = await Task
+            .WhenAny(task, timeoutTask)
             .ConfigureAwait(false);
 
         if (completedTask == timeoutTask)

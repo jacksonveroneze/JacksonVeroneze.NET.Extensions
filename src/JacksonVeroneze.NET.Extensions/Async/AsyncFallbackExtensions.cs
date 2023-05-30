@@ -7,7 +7,9 @@ public static partial class AsyncExtensions
     {
         try
         {
-            return await task.ConfigureAwait(false);
+            TType result = await task.ConfigureAwait(false);
+            
+            return result;
         }
         catch
         {

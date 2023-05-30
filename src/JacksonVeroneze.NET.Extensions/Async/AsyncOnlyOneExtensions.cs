@@ -10,7 +10,8 @@ public static partial class AsyncExtensions
         IEnumerable<Task<TType>> tasks = funcs
             .Select(func => func(cancellationTokenSource.Token));
 
-        Task<TType> first = await Task.WhenAny(tasks)
+        Task<TType> first = await Task
+            .WhenAny(tasks)
             .ConfigureAwait(false);
 
         cancellationTokenSource.Cancel();
