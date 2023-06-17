@@ -23,7 +23,6 @@ public class AsyncTryExtensionsTests
         // -------------------------------------------------------
         Task task = Task.Run(() =>
         {
-            Task.Delay(100);
             _testOutputHelper.WriteLine($"Delay: {100}");
             throw new Exception("Test");
         });

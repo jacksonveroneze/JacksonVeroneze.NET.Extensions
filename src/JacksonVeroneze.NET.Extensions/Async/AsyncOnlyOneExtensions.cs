@@ -5,6 +5,8 @@ public static partial class AsyncExtensions
     public static async Task<TType> OnlyOneAsync<TType>(
         this IEnumerable<Func<CancellationToken, Task<TType>>> funcs)
     {
+        ArgumentNullException.ThrowIfNull(funcs);
+
         CancellationTokenSource cancellationTokenSource = new();
 
         IEnumerable<Task<TType>> tasks = funcs

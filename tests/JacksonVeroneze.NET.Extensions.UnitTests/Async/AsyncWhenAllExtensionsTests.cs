@@ -29,7 +29,6 @@ public class AsyncWhenAllExtensionsTests
                 return Task.Run(() =>
                 {
                     int delay = item * 100;
-                    Task.Delay(delay);
                     _testOutputHelper.WriteLine($"Delay: {delay}");
                 });
             });
@@ -50,7 +49,7 @@ public class AsyncWhenAllExtensionsTests
 
     [Fact(DisplayName = nameof(AsyncExtensions)
                         + nameof(AsyncExtensions.WhenAllParallelAsync)
-                        + " : WhenAllSequentialAsync - Success")]
+                        + " : WhenAllParallelAsync - Success")]
     public async Task WhenAllParallelAsync_Success()
     {
         // -------------------------------------------------------
@@ -62,7 +61,6 @@ public class AsyncWhenAllExtensionsTests
                 return Task.Run(() =>
                 {
                     int delay = item * 100;
-                    Task.Delay(delay);
                     _testOutputHelper.WriteLine($"Delay: {delay}");
                 });
             });

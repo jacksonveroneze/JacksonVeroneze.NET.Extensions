@@ -1,22 +1,22 @@
-using JacksonVeroneze.NET.Extensions.Async;
+using JacksonVeroneze.NET.Extensions.String;
 using Xunit.Abstractions;
 
-namespace JacksonVeroneze.NET.Extensions.UnitTests.Async;
+namespace JacksonVeroneze.NET.Extensions.UnitTests.String;
 
-public class AsyncRetryExtensionsTests
+public class StringExtensionsTests
 {
     private readonly ITestOutputHelper _testOutputHelper;
 
-    public AsyncRetryExtensionsTests(
+    public StringExtensionsTests(
         ITestOutputHelper testOutputHelper)
     {
         _testOutputHelper = testOutputHelper;
     }
 
-    [Fact(DisplayName = nameof(AsyncExtensions)
-                        + nameof(AsyncExtensions.RetryAsync)
-                        + " : RetryAsync - Success")]
-    public void RetryAsync_Success()
+    [Fact(DisplayName = nameof(StringExtensions)
+                        + nameof(StringExtensions.ToUpperFirstCharacter)
+                        + " : ToUpperFirstCharacter - Success")]
+    public void ToUpperFirstCharacter_Success()
     {
         // -------------------------------------------------------
         // Arrange

@@ -25,7 +25,6 @@ public class AsyncFallbackExtensionsTests
 
         Task<int> task = Task.Run(() =>
         {
-            Task.Delay(100);
             _testOutputHelper.WriteLine($"Delay: {100}");
 
             if (true)

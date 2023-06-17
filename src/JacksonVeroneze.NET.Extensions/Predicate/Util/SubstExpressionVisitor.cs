@@ -4,12 +4,12 @@ namespace JacksonVeroneze.NET.Extensions.Predicate.Util;
 
 internal class SubstExpressionVisitor : ExpressionVisitor
 {
-    public readonly Dictionary<Expression, Expression> subst = new();
+    public readonly Dictionary<Expression, Expression> Subst = new();
 
     protected override Expression VisitParameter(
         ParameterExpression node)
     {
-        return subst.TryGetValue(node, out Expression? newValue)
+        return Subst.TryGetValue(node, out Expression? newValue)
             ? newValue
             : node;
     }

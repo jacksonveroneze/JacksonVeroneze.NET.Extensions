@@ -9,15 +9,13 @@ public static class PredicateExtensions
         this Expression<Func<TType, bool>> a,
         Expression<Func<TType, bool>> b)
     {
+        ArgumentNullException.ThrowIfNull(a);
+        ArgumentNullException.ThrowIfNull(b);
+
         ParameterExpression parameter = a.Parameters[0];
 
-        SubstExpressionVisitor visitor = new()
-        {
-            subst =
-            {
-                [b.Parameters[0]] = parameter
-            }
-        };
+        SubstExpressionVisitor visitor =
+            new() { Subst = { [b.Parameters[0]] = parameter } };
 
         BinaryExpression body = Expression
             .AndAlso(a.Body, visitor.Visit(b.Body));
@@ -30,15 +28,13 @@ public static class PredicateExtensions
         this Expression<Func<TType, bool>> a,
         Expression<Func<TType, bool>> b)
     {
+        ArgumentNullException.ThrowIfNull(a);
+        ArgumentNullException.ThrowIfNull(b);
+
         ParameterExpression parameter = a.Parameters[0];
 
-        SubstExpressionVisitor visitor = new()
-        {
-            subst =
-            {
-                [b.Parameters[0]] = parameter
-            }
-        };
+        SubstExpressionVisitor visitor =
+            new() { Subst = { [b.Parameters[0]] = parameter } };
 
         BinaryExpression body = Expression
             .Or(a.Body, visitor.Visit(b.Body));
