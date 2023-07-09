@@ -3,7 +3,7 @@ using System.Text;
 
 namespace JacksonVeroneze.NET.Extensions.String;
 
-public static class StringExtensions
+public static partial class StringExtensions
 {
     public static string ToUpperFirstCharacter(this string input)
     {
