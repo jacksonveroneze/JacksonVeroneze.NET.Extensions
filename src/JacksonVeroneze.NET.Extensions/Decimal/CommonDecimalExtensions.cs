@@ -14,14 +14,22 @@ public static partial class DecimalExtensions
     }
 
     public static decimal ToRoundDefault(this decimal input, int decimals)
-        => Math.Round(input, decimals);
+    {
+        return Math.Round(input, decimals);
+    }
 
     public static decimal? ToRoundDefault(this decimal? input, int decimals)
-        => input?.ToRoundDefault(decimals) ?? input;
+    {
+        return input?.ToRoundDefault(decimals) ?? input;
+    }
 
     public static decimal ToAbsolute(this decimal input)
-        => Math.Abs(input);
+    {
+        return Math.Abs(input);
+    }
 
     public static decimal? ToAbsolute(this decimal? input)
-        => input?.ToAbsolute() ?? input;
+    {
+        return input?.ToAbsolute() ?? input;
+    }
 }
