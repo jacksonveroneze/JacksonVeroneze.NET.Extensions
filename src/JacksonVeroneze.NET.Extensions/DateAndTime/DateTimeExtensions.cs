@@ -15,4 +15,11 @@ public static class DateTimeExtensions
         return new(input.Year, input.Month, input.Day,
             timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
     }
+
+    public static DateTime ModifyTime(this DateTime input,
+        DateTime time)
+    {
+        return new(input.Year, input.Month, input.Day,
+            time.Hour, time.Minute, time.Second);
+    }
 }

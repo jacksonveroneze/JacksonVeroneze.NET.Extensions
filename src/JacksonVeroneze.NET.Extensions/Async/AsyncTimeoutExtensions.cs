@@ -18,7 +18,7 @@ public static partial class AsyncExtensions
             return;
         }
 
-        await task;
+        await task.ConfigureAwait(false);
     }
 
     public static async Task WithTimeoutAsync(
@@ -37,7 +37,7 @@ public static partial class AsyncExtensions
             throw new TimeoutException();
         }
 
-        await task;
+        await task.ConfigureAwait(false);
     }
 
     public static async Task<TType> WithTimeoutAsync<TType>(
@@ -56,6 +56,6 @@ public static partial class AsyncExtensions
             throw new TimeoutException();
         }
 
-        return await task;
+        return await task.ConfigureAwait(false);
     }
 }

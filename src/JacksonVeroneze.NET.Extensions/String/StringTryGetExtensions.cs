@@ -13,7 +13,7 @@ public static partial class StringExtensions
 
         CultureInfo cultureInfo = CultureInfo.CurrentCulture;
 
-        return int.TryParse(input, cultureInfo, out int val) ? val : null;
+        return int.TryParse(input, cultureInfo, out int value) ? value : null;
     }
 
     public static decimal? TryGetDecimalValue(this string input)
@@ -25,7 +25,7 @@ public static partial class StringExtensions
 
         CultureInfo cultureInfo = CultureInfo.CurrentCulture;
 
-        return decimal.TryParse(input, cultureInfo, out decimal val) ? val : null;
+        return decimal.TryParse(input, cultureInfo, out decimal value) ? value : null;
     }
 
     public static DateOnly? TryGetDateOnlyValue(this string input)
@@ -37,7 +37,7 @@ public static partial class StringExtensions
 
         CultureInfo cultureInfo = CultureInfo.CurrentCulture;
 
-        return DateOnly.TryParse(input, cultureInfo, out DateOnly val) ? val : null;
+        return DateOnly.TryParse(input, cultureInfo, out DateOnly value) ? value : null;
     }
 
     public static TimeOnly? TryGetTimeOnlyValue(this string input)
@@ -49,6 +49,6 @@ public static partial class StringExtensions
 
         CultureInfo cultureInfo = CultureInfo.CurrentCulture;
 
-        return TimeOnly.TryParse(input, cultureInfo, out TimeOnly val) ? val : null;
+        return TimeOnly.TryParse(input, cultureInfo, out TimeOnly value) ? value : null;
     }
 }
