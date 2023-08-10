@@ -22,4 +22,11 @@ public static class DateTimeExtensions
         return new DateTime(input.Year, input.Month, input.Day,
             time.Hour, time.Minute, time.Second);
     }
+
+    public static DateTime ModifyTime(this DateTime input,
+        TimeOnly time)
+    {
+        return new DateTime(input.Year, input.Month, input.Day,
+            time.Hour, time.Minute, time.Second);
+    }
 }
