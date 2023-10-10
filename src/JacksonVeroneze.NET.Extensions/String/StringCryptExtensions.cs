@@ -27,7 +27,7 @@ public static partial class StringExtensions
 
         foreach (byte t in bytes)
         {
-            builder.Append(t.ToString("x2"));
+            //builder.Append(t.ToString("x2"));
         }
 
         return builder.ToString();
