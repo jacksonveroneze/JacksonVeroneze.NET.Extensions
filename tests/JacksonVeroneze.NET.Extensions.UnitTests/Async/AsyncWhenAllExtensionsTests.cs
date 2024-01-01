@@ -1,36 +1,19 @@
 using JacksonVeroneze.NET.Extensions.Async;
+using Xunit.Abstractions;
 
-namespace JacksonVeroneze.NET.Extensions.UnitTests;
+namespace JacksonVeroneze.NET.Extensions.UnitTests.Async;
 
-public class AsyncExtensionsTests
+public class AsyncWhenAllExtensionsTests
 {
-    [Fact(DisplayName = nameof(AsyncExtensions)
-                        + nameof(AsyncExtensions.TryAsync)
-                        + " : TryAsync - Success")]
-    public async Task TryAsync_Success()
+    private readonly ITestOutputHelper _testOutputHelper;
+
+    public AsyncWhenAllExtensionsTests(
+        ITestOutputHelper testOutputHelper)
     {
-        // -------------------------------------------------------
-        // Arrange
-        // -------------------------------------------------------
-        Task task = Task.Run(() =>
-        {
-            Task.Delay(100);
-            Console.WriteLine($"Delay: {100}");
-            throw new Exception("Test");
-        });
-
-        Action<Exception> handler = ex
-            => Console.WriteLine(ex.Message);
-
-        // -------------------------------------------------------
-        // Act
-        // -------------------------------------------------------
-        await task.TryAsync(handler);
-
-        // -------------------------------------------------------
-        // Assert
-        // -------------------------------------------------------
+        _testOutputHelper = testOutputHelper;
     }
+
+    #region WhenAllSequentialAsync
 
     [Fact(DisplayName = nameof(AsyncExtensions)
                         + nameof(AsyncExtensions.WhenAllSequentialAsync)
@@ -41,13 +24,12 @@ public class AsyncExtensionsTests
         // Arrange
         // -------------------------------------------------------
         IEnumerable<Task> tasks = Enumerable.Range(1, 2)
-            .Select(i =>
+            .Select(item =>
             {
                 return Task.Run(() =>
                 {
-                    int delay = i * 100;
-                    Task.Delay(delay);
-                    Console.WriteLine($"Delay: {delay}");
+                    int delay = item * 100;
+                    _testOutputHelper.WriteLine($"Delay: {delay}");
                 });
             });
 
@@ -61,23 +43,25 @@ public class AsyncExtensionsTests
         // -------------------------------------------------------
     }
 
+    #endregion
+
+    #region WhenAllParallelAsync
 
     [Fact(DisplayName = nameof(AsyncExtensions)
                         + nameof(AsyncExtensions.WhenAllParallelAsync)
-                        + " : WhenAllSequentialAsync - Success")]
+                        + " : WhenAllParallelAsync - Success")]
     public async Task WhenAllParallelAsync_Success()
     {
         // -------------------------------------------------------
         // Arrange
         // -------------------------------------------------------
         IEnumerable<Task> tasks = Enumerable.Range(1, 20)
-            .Select(i =>
+            .Select(item =>
             {
                 return Task.Run(() =>
                 {
-                    int delay = i * 100;
-                    Task.Delay(delay);
-                    Console.WriteLine($"Delay: {delay}");
+                    int delay = item * 100;
+                    _testOutputHelper.WriteLine($"Delay: {delay}");
                 });
             });
 
@@ -90,4 +74,6 @@ public class AsyncExtensionsTests
         // Assert
         // -------------------------------------------------------
     }
+
+    #endregion
 }
